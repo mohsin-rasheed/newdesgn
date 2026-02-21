@@ -1,14 +1,107 @@
 body {
-  background-color: #f8f9fa;
+  background-color: #f5f7fb;
+}
+
+.hero-carousel .carousel-indicators {
+  bottom: 1.5rem;
 }
 
 .hero-slide {
-  min-height: 70vh;
-  background: linear-gradient(120deg, #0d6efd 0%, #6f42c1 100%);
+  min-height: 78vh;
+  background: radial-gradient(circle at top right, #5751ff 10%, #0f172a 70%);
   color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-animated-shape {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(2px);
+  animation: float 7s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 260px;
+  height: 260px;
+  right: 5%;
+  top: 10%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.shape-2 {
+  width: 180px;
+  height: 180px;
+  right: 30%;
+  bottom: 8%;
+  background: rgba(255, 138, 0, 0.25);
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(4px);
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+.mega-menu {
+  width: min(900px, 92vw);
+}
+
+.system-card,
+.industry-card,
+.blog-card,
+.case-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.system-card:hover,
+.industry-card:hover,
+.blog-card:hover,
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(120deg, #0f172a, #312e81);
+}
+
+.product-slide,
+.social-slide {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefits-section {
+  background: linear-gradient(180deg, #eef2ff, #f8fafc);
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  width: 6%;
+  width: 8%;
+}
+
+@media (max-width: 991px) {
+  .hero-slide {
+    min-height: 68vh;
+  }
+
+  .mega-menu {
+    width: 100%;
+  }
 }
