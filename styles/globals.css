@@ -1,0 +1,135 @@
+:root {
+  --acc-blue: #0057a4;
+  --acc-yellow: #ffd200;
+  --acc-dark: #22262d;
+  --acc-gray: #f3f5f8;
+}
+
+body {
+  background: var(--acc-gray);
+  color: #1d2633;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top-alert {
+  background: var(--acc-yellow);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.main-nav .navbar-brand {
+  color: var(--acc-blue);
+  letter-spacing: 0.02em;
+}
+
+.main-nav .navbar-brand span {
+  color: #5c708e;
+  margin-left: 0.35rem;
+}
+
+.main-nav .nav-link {
+  font-weight: 500;
+  color: #1f2f46;
+}
+
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--acc-blue);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.full-hero .carousel-indicators {
+  bottom: 1.2rem;
+}
+
+.hero-full-slide {
+  min-height: 74vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(95deg, rgba(5, 25, 45, 0.76), rgba(5, 25, 45, 0.3));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-slider-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  border: 1px solid #dfe8f3;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+.feature-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.feature-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.case-study-card {
+  background: #f8fbff;
+}
+
+.benefits-wrap {
+  background: linear-gradient(to bottom, #eef4fa 0%, #ffffff 100%);
+}
+
+.benefit-card {
+  background: #fff;
+  border: 1px solid #d5e1ef;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.75rem 1.6rem rgba(13, 45, 86, 0.07);
+}
+
+.benefit-image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.cta-band {
+  background: linear-gradient(130deg, #0057a4 0%, #1f77c3 65%, #5aa4e3 100%);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+}
+
+@media (max-width: 991px) {
+  .hero-full-slide {
+    min-height: 60vh;
+  }
+
+  .feature-slider-card {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-image {
+    height: 220px;
+  }
+}
