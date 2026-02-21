@@ -144,6 +144,9 @@ export default function HomePage() {
               <li className="nav-item"><a className="nav-link" href="#">Resources</a></li>
               <li className="nav-item"><a className="nav-link" href="#">Blog</a></li>
               <li className="nav-item"><a className="nav-link" href="#">Support</a></li>
+              <li className="nav-item"><a className="nav-link" href="#">Case Studies</a></li>
+              <li className="nav-item"><a className="nav-link" href="#">Resources</a></li>
+              <li className="nav-item ms-lg-2"><button className="btn btn-primary">Talk to Experts</button></li>
             </ul>
           </div>
         </div>
@@ -205,6 +208,90 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
+      <section id="heroSlider" className="carousel slide hero-carousel" data-bs-ride="carousel">
+        <div className="carousel-indicators">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              data-bs-target="#heroSlider"
+              data-bs-slide-to={index}
+              className={index === 0 ? 'active' : ''}
+              aria-current={index === 0}
+              aria-label={`Slide ${index + 1}`}
+            />
+          ))}
+        </div>
+        <div className="carousel-inner">
+          {heroSlides.map((slide, index) => (
+            <div key={slide.title} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+              <div className="hero-slide d-flex align-items-center">
+                <div className="container py-5 position-relative z-1">
+                  <div className="row align-items-center g-4">
+                    <div className="col-lg-7">
+                      <span className="badge text-bg-light text-primary mb-3">Future-Ready Engineering</span>
+                      <h1 className="display-5 fw-bold">{slide.title}</h1>
+                      <p className="lead opacity-90 mt-3">{slide.subtitle}</p>
+                      <div className="d-flex gap-3 flex-wrap mt-4">
+                        <button className="btn btn-light btn-lg">{slide.cta}</button>
+                        <button className="btn btn-outline-light btn-lg">See Success Stories</button>
+                      </div>
+                    </div>
+                    <div className="col-lg-5">
+                      <div className="hero-floating-card glass-card">
+                        <p className="mb-1 text-uppercase small">Performance Signal</p>
+                        <h3 className="h4">{slide.stat}</h3>
+                        <p className="mb-0 opacity-75">Scaled delivery for enterprise product teams in 30+ markets.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="hero-animated-shape shape-1" />
+                <div className="hero-animated-shape shape-2" />
+              </div>
+            </div>
+          ))}
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true" />
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true" />
+          <span className="visually-hidden">Next</span>
+        </button>
+      </section>
+
+      <section className="container py-5">
+        <div className="row g-4">
+          {buyerPaths.map((path) => (
+            <div className="col-md-6" key={path.title}>
+              <div className="card h-100 border-0 shadow-lg rounded-4">
+                <div className="card-body p-4 p-lg-5">
+                  <h3 className="h4 fw-bold">{path.title}</h3>
+                  <p className="text-secondary">{path.text}</p>
+                  <ul className="mb-4">
+                    {path.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                  <button className={`btn ${path.style}`}>{path.action}</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-5 bg-white border-top border-bottom">
+        <div className="container">
+          <h3 className="h2 mb-4">Product Systems Grid</h3>
+          <div className="row g-3">
+            {productSystems.map((item) => (
+              <div className="col-sm-6 col-lg-4" key={item}>
+                <div className="p-4 h-100 rounded-4 bg-light border system-card">{item}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
